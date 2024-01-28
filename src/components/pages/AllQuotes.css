@@ -1,0 +1,44 @@
+/* ------------ NewQuotes, Edit, Login, Signup CSS ----------------- */
+.impossible,
+.future,
+.love,
+.predict {
+    width: 50%;
+}
+
+/* --------------------------------------------- */
+
+.allQuotesGrid,
+.myQuotesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+    justify-items: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+
+    .allQuotesGrid,
+    .myQuotesGrid {
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .impossible,
+    .future,
+    .love,
+    .predict {
+        width: 80%;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .allQuotesGrid,
+    .myQuotesGrid {
+        grid-template-columns: repeat(1, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+}

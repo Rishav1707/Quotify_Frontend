@@ -1,0 +1,20 @@
+.Demo__container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, 50px);
+    max-width: 400px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.Demo__some-network {
+    text-align: center;
+}
+
+.Demo__some-network__share-button {
+    cursor: pointer;
+}
+
+.Demo__some-network__share-button:hover:not(:active) {
+    opacity: 0.75;
+}
