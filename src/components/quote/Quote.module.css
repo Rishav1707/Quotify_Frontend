@@ -164,7 +164,7 @@
 @media (max-width: 768px) {
     .Modal {
         width: 65%;
-        height: 37%;
+        height: 40%;
     }
 
     .btn {
@@ -215,5 +215,11 @@
 
     .Modal {
         width: 90%;
+    }
+}
+
+@media (max-width: 360px) {
+    .list {
+        width: 99%;
     }
 }

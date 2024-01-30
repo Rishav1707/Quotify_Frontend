@@ -156,10 +156,20 @@
 
 @media (max-width: 480px) {
     .possible {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
 
     .form {
-        width: 85%;
+        width: 94%;
+    }
+}
+
+@media (max-width: 360px) {
+    .possible {
+        font-size: 1.45rem;
+    }
+
+    .form {
+        width: 95%;
     }
 }

@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./MainNav.module.css";
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MainNav = (props) => {
   const { isloggedIn, currentUser } = props;
+  const [isProfileClicked, setIsProfileClicked] = useState(false);
   const navigate = useNavigate();
 
   const handleLogoutClick = () => {
@@ -35,8 +36,13 @@ const MainNav = (props) => {
     }).then((result) => {
       if (result.isConfirmed) {
         navigate(`/logout`);
+        setIsProfileClicked(false);
       }
     });
+  };
+
+  const handlePersonClick = () => {
+    setIsProfileClicked(!isProfileClicked);
   };
 
   return (
@@ -106,9 +112,11 @@ const MainNav = (props) => {
             </Link>
           </div>
           {isloggedIn ? (
-            <span style={{ display: "flex", alignItems: "center" }}>
-              <span className="material-symbols-outlined">person</span>
-              {currentUser.name}
+            <span
+              onClick={handlePersonClick}
+              className="material-symbols-outlined"
+            >
+              person
             </span>
           ) : (
             <div>
@@ -118,9 +126,20 @@ const MainNav = (props) => {
             </div>
           )}
           {isloggedIn && (
-            <div>
-              <button onClick={handleLogoutClick}>
+            <div
+              className={isProfileClicked ? styles.clicked : styles.notClicked}
+            >
+              <span>👋 Hello, {currentUser.name}</span>
+              <button
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  fontSize: "1.2rem",
+                }}
+                onClick={handleLogoutClick}
+              >
                 <span className="material-symbols-outlined">logout</span>
+                <span>Logout</span>
               </button>
             </div>
           )}

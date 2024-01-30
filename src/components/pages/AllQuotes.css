@@ -30,7 +30,7 @@
     .future,
     .love,
     .predict {
-        width: 80%;
+        width: 85%;
     }
 }
 
@@ -40,5 +40,23 @@
     .myQuotesGrid {
         grid-template-columns: repeat(1, minmax(250px, 1fr));
         gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .impossible,
+    .future,
+    .love,
+    .predict {
+        width: 91%;
+    }
+}
+
+@media (max-width: 360px) {
+
+    .allQuotesGrid,
+    .myQuotesGrid {
+        padding: 0.5rem;
     }
 }

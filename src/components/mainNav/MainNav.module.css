@@ -70,8 +70,6 @@
         padding: 1.2rem 2rem;
         background-color: #fff;
         font-size: 1.2rem;
-        border-bottom-left-radius: 2.5rem;
-        border-bottom-right-radius: 2.5rem;
         box-shadow: 0px -1px 5px 0px rgba(0, 0, 0, 0.2);
     }
 
@@ -98,6 +96,39 @@
     .MobileNavButton span:focus {
         color: #2C60E0;
     }
+
+    .notClicked {
+        display: none;
+    }
+
+    .clicked {
+        position: absolute;
+        width: 11.5rem;
+        height: 8rem;
+        padding: 1rem;
+        right: 0;
+        bottom: 4.3rem;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        border-radius: 4px;
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+        animation: fadeInUp 0.3s ease-in-out;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translate3d(0, 40px, 0);
+        }
+
+        to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
 }
 
 @media (max-width: 640px) {}
@@ -106,6 +137,6 @@
 
 @media (max-width: 480px) {
     .MobileNav {
-        padding: 1.2rem 2.5rem;
+        padding: 1.2rem 1.2rem;
     }
 }
