@@ -80,6 +80,11 @@
         width: 100%;
     }
 
+    .MobileNavButton a {
+        display: flex;
+        text-decoration: none;
+    }
+
     .MobileNavButton button {
         border: none;
         background-color: transparent;
@@ -103,11 +108,11 @@
 
     .clicked {
         position: absolute;
-        width: 11.5rem;
+        width: 12rem;
         height: 8rem;
         padding: 1rem;
         right: 0;
-        bottom: 4.3rem;
+        bottom: 4.2rem;
         background-color: #fff;
         display: flex;
         flex-direction: column;
@@ -137,6 +142,6 @@
 
 @media (max-width: 480px) {
     .MobileNav {
-        padding: 1.2rem 1.2rem;
+        padding: 1.5rem 1.2rem;
     }
 }
