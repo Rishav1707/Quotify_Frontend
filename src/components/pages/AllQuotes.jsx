@@ -31,7 +31,7 @@ const AllQuotes = (props) => {
   return (
     <div>
       <h1 className="animate__animated animate__fadeInUp">
-        Your Daily Dose of Inspiration!
+        Your Daily Dose of Inspiration!🌟
       </h1>
       {isloading ? (
         <div className="loadingSpinner">
