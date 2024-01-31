@@ -47,15 +47,42 @@ h1 {
   color: #374956;
 }
 
+.loadingSpinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 7.5rem;
+}
+
+.loadingSpinner p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
 @media (max-width: 768px) {
   body {
     margin-top: 0;
     margin-bottom: 6rem;
+  }
+
+  .loadingSpinner {
+    margin-top: 6.5rem;
+    gap: 1rem;
+  }
+
+  .loadingSpinner p {
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 640px) {
   h1 {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .loadingSpinner {
+    margin-top: 6rem;
   }
 }

@@ -17,6 +17,7 @@ const App = () => {
   const storedUser = localStorage.getItem("currentUser");
   const currentUser = storedUser ? JSON.parse(storedUser) : null;
   const [isloggedIn, setIsLoggedIn] = useState(currentUser);
+  const [isloading, setIsLoading] = useState(true);
 
   let URL = process.env.REACT_APP_localHostURL;
   if (process.env.NODE_ENV === "production") {
@@ -67,12 +68,25 @@ const App = () => {
       <MainNav isloggedIn={isloggedIn} currentUser={currentUser} />
       <main>
         <Routes>
-          <Route path="/" element={<AllQuotes isloggedIn={isloggedIn} />} />
+          <Route
+            path="/"
+            element={
+              <AllQuotes
+                isloggedIn={isloggedIn}
+                isloading={isloading}
+                setIsLoading={setIsLoading}
+              />
+            }
+          />
           <Route
             path="/myQuotes"
             element={
               isloggedIn ? (
-                <MyQuotes isloggedIn={isloggedIn} />
+                <MyQuotes
+                  isloggedIn={isloggedIn}
+                  isloading={isloading}
+                  setIsLoading={setIsLoading}
+                />
               ) : (
                 <Navigate to="/login" />
               )
@@ -101,7 +115,13 @@ const App = () => {
           />
           <Route
             path="/quote/:id"
-            element={<SingleQuote isloggedIn={isloggedIn} />}
+            element={
+              <SingleQuote
+                isloggedIn={isloggedIn}
+                isloading={isloading}
+                setIsLoading={setIsLoading}
+              />
+            }
           />
         </Routes>
       </main>
